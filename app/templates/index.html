@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Recognition System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Upload Asset Nameplate</h1>
+    </header>
+    <main class="container">
+        <form id="upload-form">
+            <input type="file" id="image-input" accept="image/*">
+            <button type="submit">Upload</button>
+        </form>
+        <img id="image-preview" alt="Image Preview">
+        <div id="result">
+            <!-- Display extracted and parsed data here -->
+        </div>
+    </main>
+    <div class="toggle-switch">
+        <label>
+            Dark Mode
+            <input type="checkbox" id="toggle-switch">
+        </label>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
