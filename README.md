@@ -33,43 +33,7 @@ Usage
 Open your web browser and go to http://127.0.0.1:5000.
 Upload an image of an industrial asset nameplate.
 View the extracted text and JSON output.
-Project Structure
-Asset_Recognition_Demo/
-├── app/
-│ ├── init.py
-│ ├── main.py
-│ ├── config.py
-│ ├── models.py
-│ ├── routes.py
-│ ├── utils.py
-│ ├── ocr/
-│ │ ├── init.py
-│ │ ├── ocr_service.py
-│ │ └── tests/
-│ │ ├── init.py
-│ │ ├── test_ocr_service.py
-│ ├── ai/
-│ │ ├── init.py
-│ │ ├── ai_service.py
-│ │ └── tests/
-│ │ ├── init.py
-│ │ ├── test_ai_service.py
-│ ├── static/
-│ │ ├── css/
-│ │ │ └── style.css
-│ │ └── js/
-│ │ └── script.js
-│ ├── templates/
-│ │ └── index.html
-├── tests/
-│ ├── init.py
-│ ├── test_routes.py
-│ └── test_integration.py
-├── data/
-│ └── images/
-├── requirements.txt
-├── README.md
-└── run.py
+
 
 Notes
 Ensure that the data/images/ directory exists before uploading images.
