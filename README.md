@@ -1,16 +1,21 @@
 Setup Instructions
+
 Prerequisites
+
 Python 3.11 or higher
 Git
+
 Clone the Repository
+
 git clone https://github.com/AidanZach/Asset_Recognition_Demo.git
+
 cd Asset_Recognition_Demo
 
 Setting Up a Virtual Environment
 It's recommended to use a virtual environment to manage dependencies. Run the following commands to create and activate a virtual environment:
 
 python -m venv venv
-source venv/bin/activate # On Windows: venv\Scripts\activate
+# On Mac: source venv/bin/activate # On Windows: venv\Scripts\activate
 
 Install Dependencies
 Install the required dependencies using pip:
