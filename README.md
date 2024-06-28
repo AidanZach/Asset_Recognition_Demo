@@ -27,7 +27,7 @@ You can use the .env.example file as a template.
 Running the Application
 To start the Flask application, run:
 
-flask --app run.py run
+flask run
 
 Usage
 Open your web browser and go to http://127.0.0.1:5000.
