@@ -1,6 +1,5 @@
 from flask import Blueprint, request, jsonify, render_template
-from .ocr.ocr_service import extract_text
-from .ai.ai_service import interpret_text
+from .ai.ai_service import interpret_image
 
 main = Blueprint('main', __name__)
 
@@ -10,15 +9,20 @@ def index():
 
 @main.route('/upload', methods=['POST'])
 def upload_image():
-    file = request.files['image']
-    file_path = f"./data/images/{file.filename}"
-    file.save(file_path)
-    
-    extracted_text = extract_text(file_path)
-    parsed_data = interpret_text(extracted_text)
-    
-    response = {
-        "extracted_text": extracted_text,
-        "parsed_data": parsed_data
-    }
-    return jsonify(response)
+    try:
+        file = request.files['image']
+        print(f"Received file: {file.filename}")
+        file_path = f"./data/images/{file.filename}"
+        file.save(file_path)
+        print(f"Saved file to: {file_path}")
+        
+        result = interpret_image(file_path)
+        print(f"Interpretation result: {result}")
+        
+        response = {
+            "parsed_data": result
+        }
+        return jsonify(response)
+    except Exception as e:
+        print(f"Error: {str(e)}")
+        return jsonify({"error": str(e)}), 500

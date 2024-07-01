@@ -23,23 +23,13 @@ document.getElementById('upload-form').addEventListener('submit', async (e) => {
     // Remove loading spinner
     resultDiv.removeChild(loadingSpinner);
 
-    // Display the extracted text
-    const extractedTextDiv = document.createElement('div');
-    extractedTextDiv.className = 'section';
-    extractedTextDiv.innerHTML = `
-        <h2>Extracted Text:</h2>
-        <pre>${result.extracted_text}</pre>
-        <button onclick="copyToClipboard('${result.extracted_text.replace(/\n/g, '\\n')}')">Copy to Clipboard</button>
-    `;
-    resultDiv.appendChild(extractedTextDiv);
-
     // Display the parsed JSON data
     const parsedDataDiv = document.createElement('div');
     parsedDataDiv.className = 'section';
     parsedDataDiv.innerHTML = `
         <h2>Parsed Data:</h2>
-        <pre>${JSON.stringify(JSON.parse(result.parsed_data), null, 2)}</pre>
-        <button onclick="copyToClipboard('${JSON.stringify(JSON.parse(result.parsed_data), null, 2).replace(/\n/g, '\\n')}')">Copy to Clipboard</button>
+        <pre>${JSON.stringify(result.parsed_data, null, 2)}</pre>
+        <button onclick="copyToClipboard('${JSON.stringify(result.parsed_data, null, 2).replace(/\n/g, '\\n')}')">Copy to Clipboard</button>
     `;
     resultDiv.appendChild(parsedDataDiv);
 
